@@ -1,0 +1,182 @@
+/* src/cse/index.css */
+
+.cse-dept-root * {
+  box-sizing: border-box;
+  margin: revert;
+  padding: revert;
+  font-family: revert;
+}
+.cse-dept-root button {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset portal styles inside CSE department */
+
+
+/* ── Tailwind v4 theme tokens ── */
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-merriweather: 'Merriweather', serif;
+
+  /* Brand colors */
+  --color-primary:       #A6192E;
+  --color-primary-dark:  #7D0F22;
+  --color-primary-light: #FCEDEF;
+  --color-accent:        #F9C349;
+  --color-neutral-dark:  #1A1A1A;
+  --color-neutral-text:  #4A4A4A;
+
+  /* lnmiit-red alias used across admin pages */
+  --color-lnmiit-red:    #A6192E;
+}
+
+/* ── Base styles ── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-inter);
+  color: #4A4A4A;
+  background: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-merriweather);
+  color: #1A1A1A;
+}
+
+/* ── Custom component classes ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #A6192E;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #7D0F22;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #A6192E;
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #A6192E;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.btn-secondary:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #111827;
+  transition: all 0.2s ease-out;
+  outline: none;
+}
+.input-field:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #A6192E;
+}
+.input-field::placeholder {
+  color: #9ca3af;
+}
+
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #f3f4f6;
+  transition: all 0.2s ease-out;
+}
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.page-header {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+}
+
+.page-subheader {
+  font-size: 1.25rem;
+  color: #4A4A4A;
+  margin-bottom: 2rem;
+}
+
+.academic-divider {
+  height: 4px;
+  width: 6rem;
+  background-color: #A6192E;
+  margin: 2rem 0;
+}
+
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+}
+
+/* ── Keyframes ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(1rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in  { animation: fadeIn  0.5s ease-out forwards; opacity: 0; }
+.animate-slide-up { animation: slideUp 0.5s ease-out forwards; opacity: 0; }
